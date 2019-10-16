@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 class Test{
     public static void main(String[] args){
 
@@ -7,10 +8,12 @@ class Test{
         // System.out.println(newStr);
 
         
-        StringBuffer str = new StringBuffer(13);
-        System.out.println(str.length());
-        System.out.println(str.capacity());
+        // StringBuffer str = new StringBuffer(13);
+        // System.out.println(str.length());
+        // System.out.println(str.capacity());
 
+        ArrayList<Integer> al = new ArrayList<Integer>(13);
+        al.add(1,12);
 
         //面试题15
         // int s15  = Sword.numberOf1(127);

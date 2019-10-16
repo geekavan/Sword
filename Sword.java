@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Sword{
 
     /**
@@ -45,6 +46,37 @@ public class Sword{
                 str.setCharAt(index--,str.charAt(i));
         }
         return str.toString();
+    }
+
+    /**
+     * 面试题6，从尾到头打印链表
+     * @param listNode
+     * @return
+     */
+    public static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+        if(listNode==null)
+            return new ArrayList<Integer>();
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        ListNode head = listNode;
+        while(listNode!=null){
+            al.add(listNode.val);
+            listNode = listNode.next;
+        }
+        for(int i=al.size()-1;i>-1;i--){
+            al.set(i, head.val);
+            head = head.next;
+        }
+        return al;
+    }
+
+    //面试题6，从尾到头打印链表中用到的类
+    public class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
     }
 
     /**
