@@ -6,7 +6,7 @@ public class Sword{
      * @param array 二维数组
      * @return  存在返回真，不存在返回假
      */
-    public static boolean Find(int target, int [][] array) {
+    public static boolean find(int target, int [][] array) {
         int r = array.length-1;
         int c = 0;
         while(r>-1 && c<array[0].length){
