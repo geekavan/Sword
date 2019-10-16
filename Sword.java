@@ -1,12 +1,31 @@
 public class Sword{
 
     /**
+     * 面试题4，二维数组中的查找
+     * @param target 要查找的数字
+     * @param array 二维数组
+     * @return  存在返回真，不存在返回假
+     */
+    public static boolean Find(int target, int [][] array) {
+        int r = array.length-1;
+        int c = 0;
+        while(r>-1 && c<array[0].length){
+            if(target==array[r][c])
+                return true;
+            else if(target>array[r][c])
+                c++;
+            else
+                r--;
+        }
+        return false;
+    }
+    /**
      * 剑指Offer面试题16，求一个数的整数次方，不考虑大数问题
      * @param base 底数
      * @param exponent 指数
      * @return 底数的指数次方
      */
-    static double power(double base, int exponent){
+    public static double power(double base, int exponent){
         if(base==0 && exponent==0)
             return 0;
         if(exponent<0)
@@ -26,7 +45,7 @@ public class Sword{
      * @param number 要求的二进制中1的个数的数字 
      * @return  1的个数
      */
-    static int numberOf1(int number){
+    public static int numberOf1(int number){
         int result = 0;
         while(number!=0){
             result++;
@@ -41,7 +60,7 @@ public class Sword{
      * @param num1 用来存储两个数字之一
      * @param num2 用来存储两个数字之一
      */
-    static void findNumsApperOnce(int[] arr, int[] num1, int[] num2){
+    public static void findNumsApperOnce(int[] arr, int[] num1, int[] num2){
         if(arr.length < 2)
             return;
         num1[0] = arr[0];
@@ -66,7 +85,7 @@ public class Sword{
      * @param arr
      * @return 返回该数字
      */
-    static int findNumberApperingOnce(int[] arr){
+    public static int findNumberApperingOnce(int[] arr){
         int[] bit = new int[32];
         for(int i=0;i<arr.length;i++){
             int temp = 1;
