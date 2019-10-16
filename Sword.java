@@ -19,6 +19,34 @@ public class Sword{
         }
         return false;
     }
+
+    /**
+     * 剑指Offer面试题5，替换空格
+     * @param str 原来的字符串
+     * @return 替换空格后的字符串
+     */
+    public static String replaceSpace(StringBuffer str) {
+        int spaceNumbers = 0;
+        int strLength = str.length();
+        for(int i=0; i<strLength; i++){
+            if(str.charAt(i)==' ')
+                spaceNumbers++;
+        }
+        int newStrLength = strLength+spaceNumbers*2;
+        str.setLength(newStrLength);
+        int index = newStrLength-1;
+        for(int i=strLength-1;i>-1;i--){
+            if(str.charAt(i)==' '){
+                str.setCharAt(index--,'0');
+                str.setCharAt(index--,'2');
+                str.setCharAt(index--,'%');
+            }
+            else
+                str.setCharAt(index--,str.charAt(i));
+        }
+        return str.toString();
+    }
+
     /**
      * 剑指Offer面试题16，求一个数的整数次方，不考虑大数问题
      * @param base 底数

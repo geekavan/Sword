@@ -1,5 +1,17 @@
 class Test{
     public static void main(String[] args){
+
+        //面试题5 替换空格
+        // StringBuffer str = new StringBuffer("hello world");
+        // String newStr = Sword.replaceSpace(str);
+        // System.out.println(newStr);
+
+        
+        StringBuffer str = new StringBuffer(13);
+        System.out.println(str.length());
+        System.out.println(str.capacity());
+
+
         //面试题15
         // int s15  = Sword.numberOf1(127);
         // System.out.println(s15);
