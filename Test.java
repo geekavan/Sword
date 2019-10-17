@@ -12,8 +12,6 @@ class Test{
         // System.out.println(str.length());
         // System.out.println(str.capacity());
 
-        ArrayList<Integer> al = new ArrayList<Integer>(13);
-        al.add(1,12);
 
         //面试题15
         // int s15  = Sword.numberOf1(127);

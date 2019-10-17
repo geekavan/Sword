@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 public class Sword{
 
     /**
@@ -77,6 +78,37 @@ public class Sword{
         ListNode(int val) {
             this.val = val;
         }
+    }
+
+    /**
+     * 面试题7，重建二叉树
+     * @param pre
+     * @param in
+     * @return
+     */
+    public static TreeNode reConstructBinaryTree(int [] pre,int [] in) {
+        if(pre.length==0)
+            return null;
+        TreeNode root = new TreeNode(pre[0]);
+        int rootIndex = 0;
+        while(pre[0]!=in[rootIndex]){
+            rootIndex++;
+        }
+        int[] leftIn = Arrays.copyOfRange(in, 0, rootIndex);
+        int[] rightIn = Arrays.copyOfRange(in, rootIndex+1, in.length);
+        int[] leftPre = Arrays.copyOfRange(pre, 1, rootIndex+1);
+        int[] rightPre = Arrays.copyOfRange(pre, rootIndex+1, pre.length);
+        root.left = reConstructBinaryTree(leftPre , leftIn);
+        root.right = reConstructBinaryTree(rightPre ,rightIn);
+        return root; 
+    }
+
+    //面试题7重建二叉树中用到的类
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
     }
 
     /**
