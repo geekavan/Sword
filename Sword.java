@@ -112,6 +112,60 @@ public class Sword{
     }
 
     /**
+     * 面试题10斐波那契数列
+     * @param n 计算斐波那契数列的第n项
+     * @return  斐波那契数列的第n项值
+     */
+    public static int Fibonacci(int n) {
+        if(n<0){
+            throw new RuntimeException("n必须大于等于0");
+        }
+        int first = 0;
+        int second = 1;
+        int temp;
+        for(int i=0;i<n;i++){
+            first = first+second;
+            temp = first;
+            first = second;
+            second = temp;
+        }
+        return first;
+    }
+
+    /**
+     * 面试题11旋转数组的最小数字
+     * @param array 旋转数组
+     * @return  旋转数组的最小数字
+     */
+    public static int minNumberInRotateArray(int[] array) {
+        if(array==null)
+            throw new RuntimeException("数组不可以为空");
+        int leftIndex = 0;
+        int rightIndex = array.length-1;
+        if(array[leftIndex]<array[rightIndex]){
+            return array[leftIndex];
+        }
+        int midIndex;
+        while((rightIndex-leftIndex)>1){
+            midIndex = (leftIndex + rightIndex)/2;
+            int temp;
+            if(array[leftIndex] > array[midIndex])
+                rightIndex = midIndex;
+            else if(array[leftIndex] < array[midIndex])
+                leftIndex = midIndex;
+            else if((array[leftIndex] == array[midIndex]) || (array[rightIndex] == array[midIndex])){
+                temp = leftIndex+1;
+                if(array[leftIndex] == array[temp])
+                    leftIndex++;
+                temp = rightIndex-1;
+                if(array[rightIndex] == array[temp])
+                    rightIndex--;
+            }
+        }
+        return array[rightIndex];
+    }
+
+    /**
      * 剑指Offer面试题16，求一个数的整数次方，不考虑大数问题
      * @param base 底数
      * @param exponent 指数
