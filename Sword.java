@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 public class Sword{
 
     /**
@@ -180,6 +181,31 @@ public class Sword{
         return numbers;
     }
     
+    /**
+     * 面试题31_栈的压入_弹出序列
+     * @param pushA
+     * @param popA
+     * @return
+     */
+    public static boolean IsPopOrder(int [] pushA,int [] popA) {
+        if(pushA.length == 0 || popA.length == 0)
+            return false;
+        Stack<Integer> s = new Stack<Integer>();
+        //用于标识弹出序列的位置
+        int popIndex = 0;
+        for(int i = 0; i< pushA.length;i++){
+            s.push(pushA[i]);
+            //如果栈不为空，且栈顶元素等于弹出序列
+            while(!s.empty() &&s.peek() == popA[popIndex]){
+                //出栈
+                s.pop();
+                //弹出序列向后一位
+                popIndex++;
+            }
+        }
+        return s.empty();
+    } 
+
     /**
      * 面试题56_数组中数字出现的次数，一个整型数组里除两个数字之外，其他数字都出现了两次
      * @param arr 

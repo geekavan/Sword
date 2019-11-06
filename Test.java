@@ -21,6 +21,12 @@ class Test{
         // double s16  = Sword.power(5, -2);
         // System.out.println(s16);
 
+        //面试题31
+
+        int[] pushA = {1,2,3,4,5,6,7,8};
+        int[] popA = {1,2,3,6,8,7,5,4,9};
+        System.out.println(Sword.IsPopOrder(pushA, popA));
+
         /* 面试题56 题目一
         int[] num1 = new int[1];
         int[] num2 = new int[1];
