@@ -2,6 +2,13 @@ import java.util.ArrayList;
 class Test{
     public static void main(String[] args){
 
+        int[] arr0 = null;
+        int[] arr1 = {};
+        System.out.println(arr0==null);
+        System.out.println(arr0.length==0);//Exception in thread "main" java.lang.NullPointerException
+        System.out.println(arr1==null);
+        System.out.println(arr1.length==0);
+
         //面试题5 替换空格
         // StringBuffer str = new StringBuffer("hello world");
         // String newStr = Sword.replaceSpace(str);
@@ -23,9 +30,9 @@ class Test{
 
         //面试题31
 
-        int[] pushA = {1,2,3,4,5,6,7,8};
-        int[] popA = {1,2,3,6,8,7,5,4,9};
-        System.out.println(Sword.IsPopOrder(pushA, popA));
+        // int[] pushA = {1,2,3,4,5,6,7,8};
+        // int[] popA = {1,2,3,6,8,7,5,4,9};
+        // System.out.println(Sword.IsPopOrder(pushA, popA));
 
         /* 面试题56 题目一
         int[] num1 = new int[1];
