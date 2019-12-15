@@ -1,13 +1,29 @@
-import java.util.ArrayList;
 class Test{
     public static void main(String[] args){
 
-        int[] arr0 = null;
-        int[] arr1 = {};
-        System.out.println(arr0==null);
-        System.out.println(arr0.length==0);//Exception in thread "main" java.lang.NullPointerException
-        System.out.println(arr1==null);
-        System.out.println(arr1.length==0);
+        Integer[] al = new Integer[5];
+        al[0] = 3;
+        al[1] = 5;
+        al[2] = 1;
+        al[3] = 4;
+        al[4] = 2;
+
+        for(int i=0;i<al.length;i++)
+            System.out.print(al[i]);
+
+        MergeSort.sort(al);
+
+        System.out.println("");
+
+        for(int i=0;i<al.length;i++)
+            System.out.print(al[i]);
+
+        // int[] arr0 = null;
+        // int[] arr1 = {};
+        // System.out.println(arr0==null);
+        // System.out.println(arr0.length==0);//Exception in thread "main" java.lang.NullPointerException
+        // System.out.println(arr1==null);
+        // System.out.println(arr1.length==0);
 
         //面试题5 替换空格
         // StringBuffer str = new StringBuffer("hello world");

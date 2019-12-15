@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "剑指Offer_791f199a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Test11_1",
             "request": "launch",
             "mainClass": "Test11_1",
